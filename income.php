@@ -3,8 +3,14 @@
 <head>
 	<title>HR - GMRC</title>
 	<?php 
-		$module = 'income';	
-		include('includes/includes.php');
+
+		//Set here the module name, so assets/scripts/dependencies will be loaded
+		$module = 'income';	 
+		include('Includes/includes.php');
+
+		//Instantiations
+		$incomeModel = new \Classes\Model\IncomeModel;
+				
 	?>
 </head>
 <body>
@@ -20,9 +26,19 @@
 								<td>Total Hours:</td>
 								<td> <input type="text" name="totalHours"/></td>
 							</tr>
-							<tr>
+							<tr>	
 								<td>Salary Type:</td>
-								<td><select class='salaryTypeOption' name="salaryType">	<option value="200">BSa</option></select>
+								<td>
+									<select class='salaryTypeOption' name="salaryType">	
+									<?php
+										$salaryType = $incomeModel->getSalaryType();
+										foreach ($salaryType as $key => $value) {  //loop ?>
+
+										<option value="<?php echo $value['salary_computation']; ?>">
+											<?php echo $value['salary_type']; ?>	
+										</option>
+									<?php } //end loop?>
+									</select>
 								</td>
 							</tr>
 							<tr>
@@ -75,16 +91,6 @@
 				</div>
 			</section>
 	</div>
-		<?php 
-			$query="SELECT * FROM salary_type";
-			$sth = $dbcon->prepare($query);
-        	$sth->execute();
-        	$var = $sth->fetchAll(PDO::FETCH_ASSOC);
-        	echo "<pre>";
-        	print_r($var);
-        	echo "</pre>";
-        	die();
-	?>
 	<script src="scripts/jquery-v2.1.0.js"></script>
 </body>
 </html>

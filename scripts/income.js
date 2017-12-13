@@ -1,3 +1,5 @@
 
 
-console.log($('.compute-income'));
+$(document).on("click", ".save-computed-income-js", function (e) {
+			alert('test');
+});
