@@ -1,0 +1,47 @@
+*{
+	padding : 0;
+	margin : 0;
+	font-family: helvetica;
+}
+
+input[type="text"] {
+	width :200px;
+	height: 20px;
+	padding: 5px;
+}
+
+select {
+	width :200px;
+	height: 30px;
+	padding: 2px;
+	font-size: 14px;
+}
+
+.center{
+	margin : 0 auto;
+}
+
+.btn{
+	width : 100px;
+	height: 30px;
+	border-radius: 30px;
+	text-align: center;
+	padding-top: 10px;
+	cursor: pointer;
+}
+
+.btn-save{
+	background-color: skyblue;
+}
+
+.m-t-lg{
+	margin-top : 40px;
+}
+
+.m-t-md{
+	margin-top :20px;
+}
+
+.table{
+	
+}

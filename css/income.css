@@ -1,0 +1,11 @@
+
+.income-wrapper{
+	background: #e0e0e0;
+	margin: 0 auto;
+}
+
+.add-income-container,
+.add-deduction-container,
+.compute-income-container{
+	margin: 0 auto;
+}
